@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Process Card Deck Builds</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>AFKJourney - Homestead Card Deck Builds <span id="version", style="font-size: 0.7em; color:#d2b48c;"/></h1>
+  <div id="information" style="font-size:0.9em; color:#d2b48c;">
+    <div id="lastUpdated"></div>
+    <div>
+      Edited by <b>AshIm</b> <a href="https://x.com/ashim_divine" target="_blank" style="color:#d2b48c;">x.com/ashim_divine</a><br/>
+      Analysis tool 
+      <a href="https://github.com/MatsuTaku/afkjourney-techcard-optimizer" target="_blank" style="color:#d2b48c;">
+        https://github.com/MatsuTaku/afkjourney-techcard-optimizer
+      </a>
+    </div>
+    <div>
+      Special thanks to <b>湊@minatoAFKJ</b> ・ Design inspired by <b>discord.gg/yaphalla</b>
+    </div>
+  </div>
+  <button id="captureBtn">Save as Image</button>
+</header>
+
+<main>
+  <table>
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Minimum Lvl.</th>
+        <th>Deck</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody">
+      <!-- JS will generate rows here -->
+    </tbody>
+  </table>
+</main>
+
+<footer>
+  <div id="information" style="font-size:0.9em; color:#d2b48c;">
+  </div>
+</footer>
+
+<!-- html2canvasライブラリ -->
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

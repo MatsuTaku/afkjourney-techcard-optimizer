@@ -1,0 +1,202 @@
+/* Base page styling */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #121212;
+  color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: #1e1e1e;
+  padding: 16px 20px;
+  border-bottom: 3px solid #8B4513;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8em;
+  font-weight: normal;
+}
+
+main {
+  padding: 20px;
+}
+
+footer {
+  padding: 0px 20px;
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;
+}
+
+thead th {
+  text-align: left;
+  padding: 12px;
+  font-weight: bold;
+  color: #d2b48c;
+  border-bottom: 2px solid #8B4513;
+}
+/* 
+tbody tr:nth-child(even) {
+  background-color: #181818;
+} */
+/* アイテムごとの区切り線 */
+tbody .item-first {
+  border-top: 3px solid #8B4513; /* アイテムの最初の行 */
+}
+
+tbody .item-continued {
+  border-top: none; /* 続き行は線なし */
+}
+
+/* アイテム画像非表示（続き行のみ） */
+tbody .item-continued .item-block::before {
+  content: ''; /* 何も表示しない */
+  display: block;
+  width: 64px;
+  height: 64px;
+}
+
+
+td {
+  vertical-align: top;
+  padding: 12px;
+}
+
+/* Column widths */
+thead th,
+tbody td {
+  width: auto;
+}
+
+/* Item column */
+.item-cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.item-block {
+  width: 64px;
+  height: 64px;
+  border-radius: 6px;
+  background: #2a1a1a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #f5f5f5;
+  font-size: 0.85em;
+  text-align: center;
+}
+.item-block img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* Minimum Lvl. column */
+.level-cell .level-wrapper {
+  display: flex;
+  gap: 6px;
+  flex-direction: row;
+  /* flex-wrap: nowrap; */
+  justify-content: flex-start;
+}
+
+.level-block {
+  width: 64px;
+  height: 64px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #2a1a1a;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #f0e5d8;
+  font-size: 0.85em;
+  text-align: center;
+}
+.level-block img {
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  object-fit: cover;
+}
+.level-block .level-text {
+  font-weight: bold;
+}
+
+/* Deck column */
+.deck-cell {
+  text-align: center;
+}
+.deck-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.deck-block {
+  width: 64px;
+  height: 48px;
+  border-radius: 4px;
+  background: #2a1a1a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #f5f5f5;
+  font-size: 0.75em;
+}
+.deck-block img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.rank-block {
+  margin-left: 8px;
+  padding: 4px 6px;
+  /* background: #2a1a1a; */
+  border-radius: 4px;
+  font-size: 0.5em;
+  white-space: nowrap;
+  display: flex;
+  flex-direction: column;
+}
+.rank-row {
+  text-align: right
+}
+.rank-block-table {
+  border-collapse: collapse;
+  font-size: 0.5em;      
+  font-weight: bold;
+  color: #f5f5f5;
+  /* background: #2a1a1a; */
+  border-radius: 6px;
+  margin-left: 4px;      
+  width: auto;
+}
+.rank-block-table td {
+  padding: 0px 2px;
+  text-align: right;
+  vertical-align: middle;
+  /* font-size: 0.85em;    */
+}
+.rank-block-table .icon-cell {
+  text-align: center;
+  /* width: 64px; */
+}
+
+#captureBtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 8px 16px;
+  font-size: 0.5em;
+}
