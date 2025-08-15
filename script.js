@@ -174,7 +174,7 @@ let currentWorkplace = '';
 
 // items.txt読み込み
 function parseItems() {
-  fetch('/items.txt') // ← ここを絶対パスに
+  fetch('items.txt') // ← ここを絶対パスに
     .then(res => res.text())
     .then(text => {
       const lines = text.split('\n');
@@ -265,7 +265,9 @@ function setupRouting() {
     const route = '/' + workplaceToPath(name);
     page(route, () => showWorkplace(name));
   });
-  page();
+  page.base('/afkjourney-techcard-optimizer');
+  page({ hashbang: true }); // hashルーティングの場合
+  // page();
 }
 
 // Workplaceナビ生成
