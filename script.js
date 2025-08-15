@@ -230,7 +230,7 @@ function parseItems() {
         let levelArr = [], deckArr = [], rankArr = [];
         try { levelArr = JSON.parse(levelStr || '[]'); } catch {}
         try { deckArr = JSON.parse(deckStr || '[]'); } catch {}
-        try { rankArr = JSON.parse((rankStr || '[]').replace(/\s+/g, ',')); } catch {}
+        try { rankArr = JSON.parse(rankStr || '[]'); } catch {}
 
         workplaces[workplace].items.push({
           itemName, levelArr, deckArr, rankArr
