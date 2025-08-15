@@ -5,28 +5,54 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Process Card Deck Builds</title>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<script src="https://unpkg.com/page/page.js"></script>
 </head>
 <body>
 
+<!-- キャプチャボタンを最上部に固定 -->
+<button id="captureBtn">Save as Image</button>
+
 <header>
-  <h1>AFKJourney - Homestead Card Deck Builds <span id="version", style="font-size: 0.7em; color:#d2b48c;"/></h1>
+  <h1>AFKJourney - Homestead Card Deck Builds <span id="version" style="font-size: 0.7em; color:#d2b48c;"></span></h1>
   <div id="information" style="font-size:0.9em; color:#d2b48c;">
     <div id="lastUpdated"></div>
     <div>
       Edited by <b>AshIm</b> <a href="https://x.com/ashim_divine" target="_blank" style="color:#d2b48c;">x.com/ashim_divine</a><br/>
-      Analysis tool 
-      <a href="https://github.com/MatsuTaku/afkjourney-techcard-optimizer" target="_blank" style="color:#d2b48c;">
-        https://github.com/MatsuTaku/afkjourney-techcard-optimizer
+      Analysis tools
+      <a href="https://colab.research.google.com/github/MatsuTaku/afkjourney-techcard-optimizer/blob/develop/%5BAFKJ%5D%E9%A0%98%E5%9C%B0_%E6%8A%80%E8%A1%93%E3%82%AB%E3%83%BC%E3%83%89%E3%82%B7%E3%83%9F%E3%83%A5%E3%83%AC%E3%83%BC%E3%82%BF%E3%83%BC.ipynb" target="_blank" title="Google Colab" style="margin-right:8px;">
+        <!-- Colab SVG -->
+        <svg width="1.5em" height="1.5em" viewBox="0 0 32 32" style="vertical-align:middle;">
+          <circle cx="16" cy="16" r="16" fill="#F9AB00"/>
+          <text x="16" y="22" text-anchor="middle" font-size="16" font-family="Arial, Helvetica, sans-serif" fill="#fff">C</text>
+        </svg>
+      </a>
+      <a href="https://www.notion.so/AFK-Journey-24ce0075498480048a45fbc3b1ecacf4?source=copy_link" target="_blank" title="Notion">
+        <!-- Notion SVG -->
+        <svg width="1.5em" height="1.5em" viewBox="0 0 32 32" style="vertical-align:middle;">
+          <rect x="4" y="4" width="24" height="24" rx="5" fill="#fff" stroke="#000" stroke-width="2"/>
+          <text x="16" y="22" text-anchor="middle" font-size="16" font-family="Arial, Helvetica, sans-serif" fill="#000">N</text>
+        </svg>
+      </a>
+      <a href="https://github.com/MatsuTaku/afkjourney-techcard-optimizer" target="_blank" title="GitHub" style="margin-right: 8px; color:#d2b48c;">
+        <!-- GitHub SVG -->
+        <svg width="1.5em" height="1.5em" viewBox="0 0 32 32" style="vertical-align:middle;">
+          <circle cx="16" cy="16" r="16" fill="#181717"/>
+          <path d="M16 6c-5.5 0-10 4.5-10 10 0 4.4 2.9 8.1 6.9 9.4.5.1.7-.2.7-.5v-1.8c-2.8.6-3.4-1.2-3.4-1.2-.5-1.2-1.2-1.5-1.2-1.5-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 .1 1.6-.8 1.6-.8.1-.7.4-1.2.7-1.5-2.2-.2-4.5-1.1-4.5-4.9 0-1.1.4-2 1-2.7-.1-.2-.4-1.2.1-2.5 0 0 .8-.3 2.7 1 .8-.2 1.7-.3 2.6-.3s1.8.1 2.6.3c1.9-1.3 2.7-1 2.7-1 .5 1.3.2 2.3.1 2.5.6.7 1 1.6 1 2.7 0 3.8-2.3 4.7-4.5 4.9.4.3.7.9.7 1.8v2.7c0 .3.2.6.7.5C23.1 24.1 26 20.4 26 16c0-5.5-4.5-10-10-10z" fill="#fff"/>
+        </svg>
+        github.com/MatsuTaku/afkjourney-techcard-optimizer
       </a>
     </div>
     <div>
       Special thanks to <b>湊@minatoAFKJ</b> ・ Design inspired by <b>discord.gg/yaphalla</b>
     </div>
   </div>
-  <button id="captureBtn">Save as Image</button>
 </header>
 
 <main>
+  <nav id="workplaceNav" style="margin-top:12px;">
+    <!-- JSでタブを生成 -->
+  </nav>
   <table>
     <thead>
       <tr>

@@ -76,9 +76,8 @@ tbody td {
 
 /* Item column */
 .item-cell {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 1%;
+  white-space: nowrap;
 }
 .item-block {
   width: 64px;
@@ -100,12 +99,22 @@ tbody td {
 }
 
 /* Minimum Lvl. column */
+.level-cell {
+  width: 1%;
+  white-space: nowrap;
+}
+
 .level-cell .level-wrapper {
+  width: auto;
+  min-width: 0;
+  flex-wrap: nowrap;
   display: flex;
   gap: 6px;
   flex-direction: row;
   /* flex-wrap: nowrap; */
+  align-items: left;
   justify-content: flex-start;
+  width: auto;
 }
 
 .level-block {
@@ -193,10 +202,27 @@ tbody td {
 }
 
 #captureBtn {
-  position: absolute;
-  top: 0;
-  right: 0;
+  position: fixed;
+  top: 8px;
+  right: 16px;
   z-index: 1000;
   padding: 8px 16px;
-  font-size: 0.5em;
+  font-size: 1em;
+}
+
+.workplace-tab {
+  background: #2a1a1a;
+  color: #d2b48c;
+  border: none;
+  padding: 8px 18px;
+  margin-right: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+.workplace-tab.active {
+  background: #8B4513;
+  color: #fff;
 }

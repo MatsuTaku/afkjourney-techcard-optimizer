@@ -169,68 +169,152 @@ function createItemRow(itemName, levelArr, deckArr, rankArr, cardList, isSameAsP
   tableBody.appendChild(tr);
 }
 
+let workplaces = {}; // { name: { cardList: [...], items: [...] } }
+let currentWorkplace = '';
+
 // items.txt読み込み
 function parseItems() {
-  fetch('items.txt')
+  fetch('/items.txt') // ← ここを絶対パスに
     .then(res => res.text())
     .then(text => {
       const lines = text.split('\n');
-      let prevItemName = null;
+      let workplace = '';
+      let cardList = [];
+      workplaces = {};
+      let versionStr = '';
+      let lastUpdatedStr = '';
 
-      // 最初の行から Last updated を取得
+      // VersionとLast updatedを取得
       for (let line of lines) {
         line = line.trim();
         if (line.startsWith('# Version')) {
-          const versionStr = line.split('=')[1]?.trim();
-          if (versionStr) {
-            const el = document.getElementById('version');
-            el.innerHTML = `<strong>${versionStr}</strong>`;
-          }
+          versionStr = line.split('=')[1]?.trim();
         }
         if (line.startsWith('# Last updated')) {
-          const dateStr = line.split('=')[1]?.trim();
-          if (dateStr) {
-            const el = document.getElementById('lastUpdated');
-            el.innerHTML = `Last updated: <strong>${dateStr}</strong>`;
-          }
+          lastUpdatedStr = line.split('=')[1]?.trim();
         }
+        if (versionStr && lastUpdatedStr) break;
       }
+
+      // ヘッダーに表示
+      const infoEl = document.getElementById('lastUpdated');
+      let infoHtml = '';
+      if (versionStr) infoHtml += `Version: <strong>${versionStr}</strong> &nbsp; `;
+      if (lastUpdatedStr) infoHtml += `Last updated: <strong>${lastUpdatedStr}</strong>`;
+      infoEl.innerHTML = infoHtml;
 
       lines.forEach(line => {
         line = line.trim();
         if (!line) return;
 
-        // card_list セクション
-        if (line.startsWith('## card_list')) {
-          const listStr = line.split('=')[1].trim();
-          try {
-            curCardList = JSON.parse(listStr);
-          } catch (e) {
-            console.error('Error parsing card_list', e);
-            curCardList = [];
-          }
+        // Workplace名
+        if (line.startsWith('## Workplace')) {
+          workplace = line.split('=')[1].trim();
+          workplaces[workplace] = { cardList: [], items: [] };
           return;
         }
-
+        // card_list
+        if (line.startsWith('## card_list')) {
+          cardList = JSON.parse(line.split('=')[1].trim());
+          if (workplace) workplaces[workplace].cardList = cardList;
+          return;
+        }
         // コメント行はスキップ
         if (line.startsWith('#')) return;
 
-        // 4列に分割
+        // アイテム行
         const [itemName, levelStr, deckStr, rankStr] = line.split('|').map(s => s.trim());
-        if (!itemName) return;
-
+        if (!itemName || !workplace) return;
         let levelArr = [], deckArr = [], rankArr = [];
         try { levelArr = JSON.parse(levelStr || '[]'); } catch {}
         try { deckArr = JSON.parse(deckStr || '[]'); } catch {}
         try { rankArr = JSON.parse((rankStr || '[]').replace(/\s+/g, ',')); } catch {}
 
-        const isSameAsPrev = (itemName === prevItemName);
-        createItemRow(itemName, levelArr, deckArr, rankArr, curCardList, isSameAsPrev);
-
-        prevItemName = itemName;
+        workplaces[workplace].items.push({
+          itemName, levelArr, deckArr, rankArr
+        });
       });
-    })
-    .catch(err => console.error('Error loading items.txt:', err));
+
+      // Workplaceナビ生成
+      createWorkplaceNav();
+      setupRouting();
+    });
+}
+
+function workplaceToPath(name) {
+  return name.toLowerCase().replace(/\s+/g, '-');
+}
+function pathToWorkplace(path) {
+  return Object.keys(workplaces).find(
+    w => workplaceToPath(w) === path
+  );
+}
+
+function showWorkplaceByPath(path) {
+  let tabName = 'ALL';
+  if (path && path !== '/') {
+    const found = pathToWorkplace(path.replace(/^\/+/, ''));
+    if (found) tabName = found;
+  }
+  showWorkplace(tabName);
+}
+
+function setupRouting() {
+  page('/', () => showWorkplace('ALL'));
+  Object.keys(workplaces).forEach(name => {
+    const route = '/' + workplaceToPath(name);
+    page(route, () => showWorkplace(name));
+  });
+  page();
+}
+
+// Workplaceナビ生成
+function createWorkplaceNav() {
+  const nav = document.getElementById('workplaceNav');
+  nav.innerHTML = '';
+
+  // ALLタブ
+  const allBtn = document.createElement('button');
+  allBtn.textContent = 'ALL';
+  allBtn.className = 'workplace-tab';
+  allBtn.onclick = () => page.redirect('/');
+  nav.appendChild(allBtn);
+
+  Object.keys(workplaces).forEach(name => {
+    const btn = document.createElement('button');
+    btn.textContent = name;
+    btn.className = 'workplace-tab';
+    btn.onclick = () => page.redirect('/' + workplaceToPath(name));
+    nav.appendChild(btn);
+  });
+}
+
+function showWorkplace(name) {
+  tableBody.innerHTML = '';
+  let items = [];
+  if (name === 'ALL') {
+    Object.values(workplaces).forEach(wp => {
+      wp.items.forEach(item => {
+        items.push({ ...item, cardList: wp.cardList });
+      });
+    });
+  } else {
+    const wp = workplaces[name];
+    if (!wp) return;
+    items = wp.items.map(item => ({ ...item, cardList: wp.cardList }));
+  }
+
+  let prevItemName = null;
+  items.forEach(({ itemName, levelArr, deckArr, rankArr, cardList }) => {
+    const isSameAsPrev = (itemName === prevItemName);
+    createItemRow(itemName, levelArr, deckArr, rankArr, cardList, isSameAsPrev);
+    prevItemName = itemName;
+  });
+
+  // タブのactive切り替え
+  document.querySelectorAll('.workplace-tab').forEach(tab => {
+    tab.classList.toggle('active', tab.textContent === name);
+  });
 }
 
 parseItems();
