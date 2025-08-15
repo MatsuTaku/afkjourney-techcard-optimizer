@@ -197,9 +197,11 @@ function parseItems() {
       }
 
       // ヘッダーに表示
+      const versionEl = document.getElementById('version');
+      versionEl.textContent = versionStr;
       const infoEl = document.getElementById('lastUpdated');
       let infoHtml = '';
-      if (versionStr) infoHtml += `Version: <strong>${versionStr}</strong> &nbsp; `;
+      // if (versionStr) infoHtml += `Version: <strong>${versionStr}</strong> &nbsp; `;
       if (lastUpdatedStr) infoHtml += `Last updated: <strong>${lastUpdatedStr}</strong>`;
       infoEl.innerHTML = infoHtml;
 
@@ -237,7 +239,6 @@ function parseItems() {
 
       // Workplaceナビ生成
       createWorkplaceNav();
-      setupRouting();
     });
 }
 
@@ -250,26 +251,6 @@ function pathToWorkplace(path) {
   );
 }
 
-function showWorkplaceByPath(path) {
-  let tabName = 'ALL';
-  if (path && path !== '/') {
-    const found = pathToWorkplace(path.replace(/^\/+/, ''));
-    if (found) tabName = found;
-  }
-  showWorkplace(tabName);
-}
-
-function setupRouting() {
-  page('/', () => showWorkplace('ALL'));
-  Object.keys(workplaces).forEach(name => {
-    const route = '/' + workplaceToPath(name);
-    page(route, () => showWorkplace(name));
-  });
-  page.base('/afkjourney-techcard-optimizer');
-  page({ hashbang: true }); // hashルーティングの場合
-  // page();
-}
-
 // Workplaceナビ生成
 function createWorkplaceNav() {
   const nav = document.getElementById('workplaceNav');
@@ -279,16 +260,21 @@ function createWorkplaceNav() {
   const allBtn = document.createElement('button');
   allBtn.textContent = 'ALL';
   allBtn.className = 'workplace-tab';
-  allBtn.onclick = () => page.redirect('/');
+  // allBtn.onclick = () => page.show('/');
+  allBtn.onclick = () => showWorkplace('ALL');
   nav.appendChild(allBtn);
 
   Object.keys(workplaces).forEach(name => {
     const btn = document.createElement('button');
     btn.textContent = name;
     btn.className = 'workplace-tab';
-    btn.onclick = () => page.redirect('/' + workplaceToPath(name));
+    // btn.onclick = () => page.redirect('/' + workplaceToPath(name));
+    btn.onclick = () => showWorkplace(name);
     nav.appendChild(btn);
   });
+  // 初期表示はALL
+  currentWorkplace = 'ALL';
+  showWorkplace('ALL');
 }
 
 function showWorkplace(name) {
