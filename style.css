@@ -31,6 +31,9 @@ main {
 footer {
   padding: 0px 20px;
 }
+footer a {
+  color: #d2b48c;
+}
 
 /* Table styling */
 table {
@@ -82,7 +85,7 @@ tbody td {
 /* Item column */
 .item-cell {
   width: 1%;
-  white-space: nowrap;
+  white-space: wrap;
 }
 .item-block {
   width: 64px;

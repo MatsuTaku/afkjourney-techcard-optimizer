@@ -1,7 +1,7 @@
-# Version = v1.1.1 (~Lv.7)
-# Last updated = 2025-08-16
+# Version = v1.2 (~Lv.8)
+# Last updated = 2025-08-18
 
-# Item | Minimum Lvl. | Decks | ★Rank rate
+# Item | Minimum Lvl. | Decks | Star Level Production Rates
 
 ## Workplace = Kitchen
 ## card_list = ["Heat Control","Cut","Season","Slow Cook","Ferment"]
@@ -14,10 +14,13 @@ Salted Dry Fruit | [2,-1,-1,2,-1] | [3,0,0,2,0] | [77 , 5,  1 , 4, 11]
 Salted Dry Fruit | [3] | [4,0,0,1,0] | [59,  9,  3,  6, 23]
 Spice Dry Fruit | [2,-1,-1,2,-1] | [4,1,0,2,0] | [86,  2,  2,  2,  5]
 Spice Dry Fruit | [3] | [4,0,1,2,0] | [65,  4,  5,  6, 20]
-Shroom Stri-Fry | [] | [4,0,0,1,1] | [70 , 5 , 6 , 7, 12]
+Shroom Stri-Fry | [] | [4, 0, 0, 1, 1] | [70, 5, 6, 8, 11]
+Dried Mushroom | [4] | [4, 0, 0, 1, 0] | [78, 5, 9, 3, 5]
+Dried Mushroom | [-1,-1,-1,-1,2] | [4, 0, 0, 0, 1] | [57, 10, 17, 7, 8]
+Dried Mushroom | [-1,-1,-1,3,2] | [3, 0, 0, 1, 1] | [47, 6, 12, 8, 28]
 
-## Workplace = Forge
-## card_list = ["Forge Expert","Forge","Ignite","Heat Up","Charge"]
+## Workplace = Ironhoof Forge
+## card_list = ["Forge Expert","Forge","Ignite","Heat Up","Charge","Multi-Forge"]
 Fine Carver | [] | [3,1,0,0,1] | [2, 5, 92]
 Wooden Arrow | [] | [3,0,0,0,2] | [20 ,0, 30, 50 ]
 Wooden Arrow | [-1,4] | [3,1,0,0,1]| [2, 2, 15, 80 ]
@@ -27,10 +30,15 @@ Copper Stewpot | [3] | [4,0,0,0,1]| [42, 13, 13, 15, 17]
 Chillguard Armor | [3] | [4,0,0,1,1]  | [86,  8,  4,  2,  0]
 Chillguard Armor | [-1,-1,-1,-1,2] | [4,0,0,0,2] | [10, 10,  0, 23, 57]
 Stone Armor | [[-1,-1,-1,-1,2], [-1,-1,-1,2,-1]] | [4,0,0,2,1] | [[72, 14, 7, 7, 0],[84, 9, 5, 2, 0]]
+Stone Armor | [4,-1,-1,-1,-1] | [4, 0, 0, 0, 1, 2] | [18, 1, 1, 6, 74]
+Chillguard Stone Armor | [] | [4, 0, 0, 0, 1, 2] | [79, 14, 7, 0, 0]
+# Chillguard Stone Armor | [4] | [4, 0, 0, 0, 1, 2] | [74, 11, 15, 0, 0]
 
 ## Workplace = Alchemy Workshop
-## card_list = ["Ingredients","Grind","Distill","Enchant"]
+## card_list = ["Ingredients","Grind","Distill","Enchant","Fuse"]
 Growth Serum | [] | [0,0,1,2]
 Calming Bouquet | [3] | [3,0,1,2] | [28, 11, 17, 27, 17]
-Warmdust | [-1,-1,-1,2] | [4,0,1,2]| [41, 19, 10, 17, 13]
-Calming Warmdust | [-1,-1,-1,2] | [4,0,1,2] | [35, 19, 10, 20, 16]
+Warmdust | [-1,-1,-1,-1] | [4,0,1,2]
+Calming Warmdust | [-1,-1,-1,2] | [4,0,1,2] | [] | Recommend to wait 1.4.4
+Warming Incense | [] | [3, 0, 1, 2, 0] | [] | Recommend to wait 1.4.4
+Calmwind Incense | [] | [3, 0, 1, 2, 0] | [] | Recommend to wait 1.4.4

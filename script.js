@@ -77,7 +77,7 @@ function createLevelCell(levelArr, cardList) {
 }
 
 // Deck列生成（rankArrを追加）
-function createDeckCell(deckArr, cardList, rankArr) {
+function createDeckCell(deckArr, cardList, rankArr, infoStr) {
   const td = document.createElement('td');
   td.className = 'deck-cell';
   const wrapper = document.createElement('div');
@@ -145,11 +145,18 @@ function createDeckCell(deckArr, cardList, rankArr) {
   }
 
   td.appendChild(wrapper);
+  if (infoStr !== undefined && infoStr.trim() !== '') {
+    const infoDiv = document.createElement('div');
+    infoDiv.className = 'item-info';
+    infoDiv.textContent = infoStr;
+    infoDiv.style = "font-size: 1em; color: #f5f5f5; margin-top: 4px; text-align: left;";
+    td.appendChild(infoDiv);
+  }
   return td;
 }
 
 // アイテム行生成
-function createItemRow(itemName, levelArr, deckArr, rankArr, cardList, isSameAsPrev) {
+function createItemRow(itemName, levelArr, deckArr, rankArr, infoStr, cardList, isSameAsPrev) {
   const tr = document.createElement('tr');
 
   const tdItem = document.createElement('td');
@@ -164,7 +171,7 @@ function createItemRow(itemName, levelArr, deckArr, rankArr, cardList, isSameAsP
 
   tr.appendChild(tdItem);
   tr.appendChild(createLevelCell(levelArr, cardList));
-  tr.appendChild(createDeckCell(deckArr, cardList, rankArr));
+  tr.appendChild(createDeckCell(deckArr, cardList, rankArr, infoStr));
 
   tableBody.appendChild(tr);
 }
@@ -225,7 +232,7 @@ function parseItems() {
         if (line.startsWith('#')) return;
 
         // アイテム行
-        const [itemName, levelStr, deckStr, rankStr] = line.split('|').map(s => s.trim());
+        const [itemName, levelStr, deckStr, rankStr, infoStr] = line.split('|').map(s => s.trim());
         if (!itemName || !workplace) return;
         let levelArr = [], deckArr = [], rankArr = [];
         try { levelArr = JSON.parse(levelStr || '[]'); } catch {}
@@ -233,7 +240,7 @@ function parseItems() {
         try { rankArr = JSON.parse(rankStr || '[]'); } catch {}
 
         workplaces[workplace].items.push({
-          itemName, levelArr, deckArr, rankArr
+          itemName, levelArr, deckArr, rankArr, infoStr
         });
       });
 
@@ -293,9 +300,9 @@ function showWorkplace(name) {
   }
 
   let prevItemName = null;
-  items.forEach(({ itemName, levelArr, deckArr, rankArr, cardList }) => {
+  items.forEach(({ itemName, levelArr, deckArr, rankArr, infoStr, cardList }) => {
     const isSameAsPrev = (itemName === prevItemName);
-    createItemRow(itemName, levelArr, deckArr, rankArr, cardList, isSameAsPrev);
+    createItemRow(itemName, levelArr, deckArr, rankArr, infoStr, cardList, isSameAsPrev);
     prevItemName = itemName;
   });
 
