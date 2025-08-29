@@ -1,5 +1,5 @@
-# Version = v1.3 (~Lv.9)
-# Last updated = 2025-08-28
+# Version = v1.3.3 (~Lv.9)
+# Last updated = 2025-08-29
 
 # Item | Minimum Lvl. | Decks | Star Level Production Rates
 
@@ -28,7 +28,7 @@ Pinkroot Stew | [] | [4, 0, 0, 2, 1] | [55, 7, 5, 15, 18]
 # Pinkroot Stew | [5,6] | [4, 0, 0, 2, 1] | [45, 8, 6, 16, 25]
 
 ## Workplace = Ironhoof Forge
-## card_list = ["Forge Expert","Forge","Ignite","Heat Up","Charge","Multi-Forge"]
+## card_list = ["Forge Expert","Forge","Ignite","Heat Up","Charge","Multi-Forge","Reforge"]
 Fine Carver | [] | [3,1,0,0,1] | [2, 5, 92]
 Wooden Arrow | [] | [3,0,0,0,2] | [20 ,0, 30, 50 ]
 Wooden Arrow | [-1,4] | [3,1,0,0,1]| [2, 2, 15, 80 ]
@@ -38,17 +38,34 @@ Copper Stewpot | [3] | [4,0,0,0,1]| [42, 13, 13, 15, 17]
 Chillguard Armor | [3] | [4,0,0,1,1]  | [86,  8,  4,  2,  0]
 Chillguard Armor | [-1,-1,-1,-1,2] | [4,0,0,0,2] | [10, 10,  0, 23, 57]
 #Chillguard Armor | [-1,-1,-1,-1,-1,1] | [4, 0, 0, 0, 1, 1] | [7, 1, 2, 2, 88] # 1.4.3
-Chillguard Armor | [-1,-1,-1,-1,-1,1] | [4, 0, 0, 0, 1, 1] | 
-Stone Armor | [[-1,-1,-1,-1,2], [-1,-1,-1,2,-1]] | [4,0,0,2,1] | [[72, 14, 7, 7, 0],[84, 9, 5, 2, 0]]
+Chillguard Armor | [-1,-1,-1,-1,-1,1] | [4, 0, 0, 0, 0, 2] | [9.1, 0.2, 0.3, 0.9, 89.5]
+
+#Stone Armor | [[-1,-1,-1,-1,2], [-1,-1,-1,2,-1]] | [4,0,0,2,1] | [[72, 14, 7, 7, 0],[84, 9, 5, 2, 0]] # 1.4.3
+Stone Armor | [-1,-1,-1,2,-1] | [4, 0, 0, 2, 1] | [84, 9, 5, 2, 0]
+#Stone Armor | [-1,-1,-1,2,2] | [4, 0, 0, 2, 1] | [46, 8, 6, 14, 26]
 #Stone Armor | [-1,-1,-1,-1,-1,1] | [4, 0, 0, 0, 1, 2] | [6, 1, 1, 3, 89] #1.4.3
-Stone Armor | [-1,-1,-1,-1,-1,1] | [4, 0, 0, 0, 1, 2] |
-Chillguard Stone Armor | [3] | [4, 0, 0, 0, 1, 2] | [38, 14, 20, 18, 10] #1.4.3
-#Chillguard Stone Armor | [3] | [4, 0, 0, 0, 1, 2] | 
-# Chillguard Stone Armor | [4] | [4, 0, 0, 0, 1, 2] | 
-Flameguard Plate | [3] | [4, 0, 0, 1, 1, 2] |
-#Flameguard Plate | [-1,-1,-1,3] | [4, 0, 0, 1, 1, 2] |
-#Flameguard Plate | [-1,-1,-1,-1,3] | [4, 0, 0, 0, 2, 2] | 
-#Flameguard Plate | [-1,-1,-1,3,3] | [4, 0, 0, 1, 1, 2] | 
+Stone Armor | [-1,-1,-1,-1,-1,1] | [4, 0, 0, 0, 1, 2] | [11, 2, 1, 4, 82]
+#Stone Armor | [4,-1,-1,3,3,1] | [4, 0, 0, 0, 1, 2] | [9, 2, 1, 3, 85]
+
+Chillguard Stone Armor | [3] | [2, 0, 0, 2, 1, 2] | [57, 8, 7, 11, 17]
+#Chillguard Stone Armor | [4] | [2, 0, 0, 2, 1, 2] | [53, 10, 8, 11, 17]
+#Chillguard Stone Armor | [-1,-1,-1,3,3,-1] | [2, 0, 0, 2, 1, 2] | [42, 9, 6, 12, 32]
+#[2, 0, 0, 2, 1, 2] | [42, 9, 6, 12, 32]
+#[3, 0, 0, 1, 1, 2] | [39, 2, 16, 16, 26]
+#[2, 0, 0, 1, 2, 2] | [40, 17, 8, 8, 26]
+#[4, 0, 0, 0, 1, 2] | [39, 10, 3, 35, 12]
+
+Flameguard Plate | [4,-1,-1,-1,3,-1] | [2, 0, 1, 2, 1, 2] | [57, 20, 5, 15, 2] | Recommend to make "Manor Fountain" to upgrade Charge Lv.3. (推奨:「荘園の噴水」作成でチャージLv.3)
+Flameguard Plate | [-1,-1,-1,3,-1,-1] | [3, 0, 0, 2, 1, 2] | [34, 27, 9, 14, 15] |
+#Flameguard Plate | [-1,-1,-1,3,-1,-1] | [3, 0, 0, 2, 1, 2] | [34, 27, 9, 14, 15] |1.058 exp_rewards/★1rewards
+#Flameguard Plate | [-1,-1,-1,3,-1,-1] | [2, 0, 0, 2, 2, 2] | [47, 17, 10, 9, 17] |1.032 exp_rewards/★1rewards
+#Flameguard Plate | [-1,-1,-1,3,-1,-1] | [2, 0, 1, 2, 1, 2] | [47, 19, 9, 7, 17] |1.029 exp_rewards/★1rewards
+#[4, 0, 0, 1, 1, 2] | [36, 37, 17, 10, 0]
+#[3, 0, 0, 2, 1, 2] | [45, 32, 12, 12, 0]
+#[4, 0, 1, 0, 1, 2] | [42, 38, 13, 7, 1]
+#[3, 0, 0, 2, 1, 2] | [34, 27, 9, 14, 15] |1.058 rewards/★1
+#[2, 0, 0, 2, 2, 2] | [47, 17, 10, 9, 17] |1.032 rewards/★1
+#[2, 0, 1, 2, 1, 2] | [47, 19, 9, 7, 17] |1.029 rewards/★1
 
 ## Workplace = Alchemy Workshop
 ## card_list = ["Ingredients","Grind","Distill","Enchant","Fuse"]
@@ -61,16 +78,19 @@ Calming Bouquet | [3] | [3,0,1,2] | [28, 11, 17, 27, 17]
 #Illusion Potion | [] | [4, 1, 1, 2, 0] | [] | Recommend to wait hotfix
 #Soothing Tonic | [] | [4, 1, 1, 2, 0] | [] | Recommend to wait hotfix
 
-Warmdust | [-1] |[4, 0, 1, 2, 0] | [66, 17, 17, 0, 0]
-# Calming Warmdust | [3,2,1,1,1] | [3, 1, 1, 2, 0] | [85, 10, 4, 0, 0]
-Calming Warmdust | [-1,3] |[3, 1, 1, 2, 0] | [83, 12, 5, 0, 0]
+Warmdust | [-1] | [4, 0, 1, 2, 0] | [69, 17, 15, 0, 0]
+# Calming Warmdust | [3,2,1,1,1] | [3, 1, 1, 2, 0] | [83.2, 11.7, 5.1, 0.0, 0.0]
+Calming Warmdust | [-1,3] | [3, 1, 1, 2, 0] | [80.9, 13.3, 5.7, 0.0, 0.0]
 Warming Incense | [-1,-1,-1,2] | [3, 0, 1, 2, 0] | [70, 5, 17, 7, 2]
+#Warming Incense | [3,4,-1,3,-1] | [3, 0, 1, 2, 0] | [37, 10, 25, 17, 12]
+Warming Incense | [4,4,-1,3,-1] | [2, 1, 1, 2, 0] | [23, 8, 23, 17, 29]
 Calmwind Incense | [-1,-1,-1,2] | [3, 0, 1, 2, 0] | [77, 5, 8, 5, 5]
 #Warming Incense | [4,4,1,2,1] | [3, 0, 1, 2, 0] | [40, 8, 15, 13, 23]
 #Calmwind Incense | [4,4,1,2,1] | [3, 0, 1, 2, 0] | [60, 2, 7, 18, 13]
-Illusion Potion | [4] | [4, 1, 1, 2, 0] | [78, 6, 5, 7, 4]
-Soothing Tonic | [4] | [4, 1, 1, 2, 0] | [76, 7, 12, 3, 2]
-#Illusion Potion | [4,4,1,3,1] | [4, 1, 1, 2, 0] | [59, 8, 7, 12, 15]
-#Soothing Tonic | [4,4,1,3,1] | [4, 1, 1, 2, 0] | [52, 10, 20, 9, 10]
-#Illusion Potion | [4,5,1,3,1] | [4, 1, 1, 2, 0] | [56, 8, 7, 12, 18]
-#Soothing Tonic | [4,5,1,3,1] | [4, 1, 1, 2, 0] | [49, 10, 19, 10, 12]
+#Calmwind Incense | [4,4,1,3,1] | [3, 0, 1, 2, 0] | [38, 7, 8, 12, 35]
+Illusion Potion | [4] | [4, 1, 1, 2, 0] | [78, 7, 4, 7, 4]
+Soothing Tonic | [4] | [4, 1, 1, 2, 0] | [74, 8, 12, 3, 2]
+#Illusion Potion | [4,4,1,3,1] | [4, 1, 1, 2, 0] | [60, 7, 7, 12, 14]
+#Soothing Tonic | [4,4,1,3,1] | [4, 1, 1, 2, 0] | [51, 8, 21, 9, 11]
+#Illusion Potion | [4,5,1,3,1] | [4, 1, 1, 2, 0] | [57, 7, 7, 12, 17]
+#Soothing Tonic | [4,5,1,3,1] | [4, 1, 1, 2, 0] | [47, 10, 21, 10, 13]
