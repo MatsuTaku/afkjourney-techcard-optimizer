@@ -1,10 +1,10 @@
-# Version = v1.3.3 (~Lv.9)
-# Last updated = 2025-08-29
+# Version = v1.4 (~Lv.10)
+# Last updated = 2025-09-01
 
 # Item | Minimum Lvl. | Decks | Star Level Production Rates
 
 ## Workplace = Kitchen
-## card_list = ["Heat Control","Cut","Season","Slow Cook","Ferment"]
+## card_list = ["Heat Control","Cut","Season","Slow Cook","Ferment","Bake"]
 Toast | [] | [4,0,0,1,0]
 Spice Bread | [] | [3,0,0,2,0] | [53 , 6 ,11, 29]
 Spice Bread | [2,-1,-1,2,-1] | [4,0,0,1] |  [38,  9, 15, 36]
@@ -23,9 +23,14 @@ Shroom Stri-Fry | [] | [4, 0, 0, 1, 1] | [70, 5, 6, 8, 11]
 Dried Mushroom | [4] | [4, 0, 0, 1, 0] | [78, 5, 9, 3, 5]
 Dried Mushroom | [-1,-1,-1,-1,2] | [4, 0, 0, 0, 1] | [57, 10, 17, 7, 8]
 Dried Mushroom | [-1,-1,-1,3,2] | [3, 0, 0, 1, 1] | [47, 6, 12, 8, 28]
+Dried Mushroom | [6,-1,-1,-1,-1,-1] | [4, 0, 0, 0, 1, 0] | [26, 6, 16, 7, 45]
 Pinkroot Stew | [] | [4, 0, 0, 2, 1] | [55, 7, 5, 15, 18]
 # Pinkroot Stew | [5] | [4, 0, 0, 2, 1] | [45, 8, 6, 16, 25]
 # Pinkroot Stew | [5,6] | [4, 0, 0, 2, 1] | [45, 8, 6, 16, 25]
+# Pinkroot Stew | [6,-1,-1,-1,-1,-1] | [4, 0, 0, 2, 1, 0] | [37, 8, 6, 17, 33]
+#[5,6,1,3,2,1]
+Odd Sweet | [5,-1,-1,-1,-1,1] | [4, 0, 1, 2, 1, 0] | [51, 7, 8, 14, 21]
+#Odd Sweet | [6,-1,-1,-1,-1,1] | [4, 0, 1, 2, 1, 0] | [41, 7, 8, 16, 28]
 
 ## Workplace = Ironhoof Forge
 ## card_list = ["Forge Expert","Forge","Ignite","Heat Up","Charge","Multi-Forge","Reforge"]
@@ -54,6 +59,7 @@ Chillguard Stone Armor | [3] | [2, 0, 0, 2, 1, 2] | [57, 8, 7, 11, 17]
 #[3, 0, 0, 1, 1, 2] | [39, 2, 16, 16, 26]
 #[2, 0, 0, 1, 2, 2] | [40, 17, 8, 8, 26]
 #[4, 0, 0, 0, 1, 2] | [39, 10, 3, 35, 12]
+Chillguard Stone Armor | [5,-1,-1,-1,-1,-1,-1] | [4, 0, 0, 0, 1, 2, 0] | [26, 9, 16, 19, 31]
 
 Flameguard Plate | [4,-1,-1,-1,3,-1] | [2, 0, 1, 2, 1, 2] | [57, 20, 5, 15, 2] | Recommend to make "Manor Fountain" to upgrade Charge Lv.3. (推奨:「荘園の噴水」作成でチャージLv.3)
 Flameguard Plate | [-1,-1,-1,3,-1,-1] | [3, 0, 0, 2, 1, 2] | [34, 27, 9, 14, 15] |
@@ -66,31 +72,53 @@ Flameguard Plate | [-1,-1,-1,3,-1,-1] | [3, 0, 0, 2, 1, 2] | [34, 27, 9, 14, 15]
 #[3, 0, 0, 2, 1, 2] | [34, 27, 9, 14, 15] |1.058 rewards/★1
 #[2, 0, 0, 2, 2, 2] | [47, 17, 10, 9, 17] |1.032 rewards/★1
 #[2, 0, 1, 2, 1, 2] | [47, 19, 9, 7, 17] |1.029 rewards/★1
+Flameguard Plate | [5,-1,-1,-1,-1,-1,-1] | [4, 0, 0, 1, 1, 2, 0] | [28, 27, 12, 17, 16]
+
+Fireproof Helm | [-1,-1,-1,-1,-1,-1,1] | [3, 0, 0, 2, 1, 2, 0] | [51, 9, 8, 16, 17]
+#Fireproof Helm | [4,5,-1,-1,-1,-1,1] | [3, 0, 0, 2, 1, 2, 0] | [51, 9, 8, 16, 17]
+#Fireproof Helm | [5,5,-1,-1,-1,-1,-1] | [3, 0, 0, 2, 1, 2, 0] | [46.7, 6.2, 10.2, 14.5, 22.4]
+Firefang Sword | [-1,-1,-1,-1,-1,-1,1] | [3, 0, 0, 2, 1, 2, 0] | [44, 8, 10, 15, 24]
+#[5,5,1,3,3,1,1]
+Firefang Sword | [5,-1,-1,-1,-1,-1,-1] | [4, 0, 0, 1, 1, 2, 0] | [33, 8, 11, 19, 30]
 
 ## Workplace = Alchemy Workshop
-## card_list = ["Ingredients","Grind","Distill","Enchant","Fuse"]
+## card_list = ["Ingredients","Grind","Distill","Enchant","Fuse","Overload"]
 Growth Serum | [] | [0,0,1,2]
 Calming Bouquet | [3] | [3,0,1,2] | [28, 11, 17, 27, 17]
-#Warmdust | [-1,-1,-1,-1] | [4,0,1,2]
-#Calming Warmdust | [-1,-1,-1,2] | [4,0,1,2] | [] | Recommend to wait hotfix
-#Warming Incense | [] | [3, 0, 1, 2, 0] | [] | Recommend to wait hotfix
-#Calmwind Incense | [] | [3, 0, 1, 2, 0] | [] | Recommend to wait hotfix
-#Illusion Potion | [] | [4, 1, 1, 2, 0] | [] | Recommend to wait hotfix
-#Soothing Tonic | [] | [4, 1, 1, 2, 0] | [] | Recommend to wait hotfix
 
 Warmdust | [-1] | [4, 0, 1, 2, 0] | [69, 17, 15, 0, 0]
 # Calming Warmdust | [3,2,1,1,1] | [3, 1, 1, 2, 0] | [83.2, 11.7, 5.1, 0.0, 0.0]
 Calming Warmdust | [-1,3] | [3, 1, 1, 2, 0] | [80.9, 13.3, 5.7, 0.0, 0.0]
-Warming Incense | [-1,-1,-1,2] | [3, 0, 1, 2, 0] | [70, 5, 17, 7, 2]
+
+Warming Incense | [-1,-1,-1,2,1] | [3, 0, 1, 2, 0] | [70, 5, 17, 7, 2]
 #Warming Incense | [3,4,-1,3,-1] | [3, 0, 1, 2, 0] | [37, 10, 25, 17, 12]
-Warming Incense | [4,4,-1,3,-1] | [2, 1, 1, 2, 0] | [23, 8, 23, 17, 29]
-Calmwind Incense | [-1,-1,-1,2] | [3, 0, 1, 2, 0] | [77, 5, 8, 5, 5]
 #Warming Incense | [4,4,1,2,1] | [3, 0, 1, 2, 0] | [40, 8, 15, 13, 23]
+Warming Incense | [4,4,-1,3,-1] | [2, 1, 1, 2, 0] | [23, 8, 23, 17, 29]
+Warming Incense | [-1,-1,-1,-1,-1,1] | [0, 0, 1, 2, 1, 2] | [0, 0, 0, 0, 100]
+Calmwind Incense | [-1,-1,-1,2,1] | [3, 0, 1, 2, 0] | [77, 5, 8, 5, 5]
 #Calmwind Incense | [4,4,1,2,1] | [3, 0, 1, 2, 0] | [60, 2, 7, 18, 13]
 #Calmwind Incense | [4,4,1,3,1] | [3, 0, 1, 2, 0] | [38, 7, 8, 12, 35]
-Illusion Potion | [4] | [4, 1, 1, 2, 0] | [78, 7, 4, 7, 4]
-Soothing Tonic | [4] | [4, 1, 1, 2, 0] | [74, 8, 12, 3, 2]
+Calmwind Incense | [-1,-1,-1,-1,-1,1] | [0, 1, 1, 2, 0, 2] | [4, 5, 10, 27, 53]
+#Calmwind Incense | [-1,6,-1,-1,-1,-1] | [0, 1, 1, 2, 0, 2] | [4, 2, 9, 25, 60]
+#Calmwind Incense | [5,-1,-1,-1,-1,-1] | [0, 1, 1, 2, 0, 2] | [4, 2, 9, 25, 60]
+#Calmwind Incense | [-1,-1,-1,-1,2,-1] | [0, 1, 1, 2, 0, 2] | [4, 2, 9, 25, 60]
+
+Illusion Potion | [4,-1,-1,-1] | [4, 1, 1, 2, 0] | [78, 7, 4, 7, 4]
 #Illusion Potion | [4,4,1,3,1] | [4, 1, 1, 2, 0] | [60, 7, 7, 12, 14]
-#Soothing Tonic | [4,4,1,3,1] | [4, 1, 1, 2, 0] | [51, 8, 21, 9, 11]
 #Illusion Potion | [4,5,1,3,1] | [4, 1, 1, 2, 0] | [57, 7, 7, 12, 17]
+Illusion Potion | [-1,-1,-1,-1,-1,1] | [0, 3, 1, 2, 0, 2] | [7, 6, 6, 16, 64]
+#Illusion Potion | [-1,6,-1,-1,-1,-1] | [0, 3, 1, 2, 0, 2] | [3, 4, 5, 12, 76]
+#Illusion Potion | [5,-1,-1,-1,-1,-1] | [0, 3, 1, 2, 0, 2] | [3, 4, 5, 12, 76]
+#Illusion Potion | [-1,-1,-1,-1,2,-1] | [0, 3, 1, 2, 0, 2] | [3, 4, 5, 12, 76]
+Soothing Tonic | [4,-1,-1,-1] | [4, 1, 1, 2, 0] | [74, 8, 12, 3, 2]
+#Soothing Tonic | [4,4,1,3,1] | [4, 1, 1, 2, 0] | [51, 8, 21, 9, 11]
 #Soothing Tonic | [4,5,1,3,1] | [4, 1, 1, 2, 0] | [47, 10, 21, 10, 13]
+Soothing Tonic | [-1,-1,-1,-1,-1,1] | [0, 3, 1, 2, 0, 2] | [2, 5, 24, 20, 48]
+#Soothing Tonic | [-1,6,-1,-1,-1,-1] | [0, 3, 1, 2, 0, 2] | [0, 2, 16, 16, 65]
+#Soothing Tonic | [5,-1,-1,-1,-1,-1] | [0, 3, 1, 2, 0, 2] | [0, 2, 16, 16, 65]
+#Soothing Tonic | [-1,-1,-1,-1,2,-1] | [0, 3, 1, 2, 0, 2] | [0, 2, 16, 16, 65]
+
+Fireward Ring | [-1,5,-1,-1,-1,1] | [3, 1, 1, 2, 0, 2] | [74, 7, 6, 7, 6]
+Fireward Ring | [-1,6,-1] | [2, 2, 1, 2, 0, 2] | [58, 11, 9, 13, 9]
+Fireward Ring | [5] | [1, 3, 1, 2, 0, 2] | [46, 13, 12, 17, 13]
+#Fireward Ring | [-1,-1,-1,-1,2,-1] | [1, 3, 1, 2, 0, 2] | [46, 13, 12, 17, 13]

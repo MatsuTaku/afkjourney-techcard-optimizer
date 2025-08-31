@@ -324,7 +324,10 @@ document.getElementById('captureBtn').addEventListener('click', () => {
   }).then(canvas => {
     const link = document.createElement('a');
     link.href = canvas.toDataURL('image/png');
-    link.download = 'process_card_deck_builds.png';
+    versionStr = document.getElementById('version').textContent || 'unknown';
+    cversion = versionStr.replace(/\./g, '_');
+    link.download = 'process_card_deck_builds_'+cversion+'.png';
+    console.log('Downloading image as', link.download);
     link.click();
     btn.style.display = ''; // キャプチャ後に再表示
   });
